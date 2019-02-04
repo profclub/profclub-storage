@@ -13,6 +13,10 @@ public class FileSystemStorageProvider implements IStorageProvider {
 
     private Path basePath;
 
+    public FileSystemStorageProvider(LocalStorageConfiguration localStorageConfiguration) {
+        this.localStorageConfiguration = localStorageConfiguration;
+    }
+
     @PostConstruct
     public void init() {
         this.basePath = Paths.get(localStorageConfiguration.getBasePath());
